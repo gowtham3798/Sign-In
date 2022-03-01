@@ -1,6 +1,6 @@
 require('./config/db')
 const app = require('express')();
-const port = 3200;
+const port = process.env.PORT;
 
 const UserRouter = require('./api/User')
 
