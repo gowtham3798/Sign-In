@@ -30,7 +30,7 @@ router.post('/signup',(req,res) => {
             message : 'Invalid email entered'
         })      
     }
-    else if(new Date(dateOfBirth).getTime()){
+    else if(dateOfBirth == new Date()){
         res.json({
             status : 'FAILURE',
             message : 'Invalid date of birth entered'
