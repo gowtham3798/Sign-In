@@ -96,7 +96,9 @@ router.post('/signup',(req,res) => {
 })
 
 router.post('/signin',(req,res) => {
-    let {email,password} = req.body;
+    // let {email,password} = req.body;
+    let email = req.body.email;
+    let password = req.body.password;
     email = email.trim(),
     password = password.trim()
     if(email =='' || password == '') {
