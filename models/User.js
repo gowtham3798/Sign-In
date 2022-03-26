@@ -5,7 +5,8 @@ const UserSchema = new schema({
     name : String,
     email : String,
     password : String,
-    dateOfBirth : String
+    dateOfBirth : String,
+    verified : Boolean,
 })
 
 const User = mongoose.model('User',UserSchema)
