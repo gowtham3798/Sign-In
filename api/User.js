@@ -282,7 +282,7 @@ router.post('/signin',(req,res) => {
     if(data.length)
     {
          
-        if(!data[0].length){
+        if(!data[0].verified){
             res.json({
                 status : 'FAILED',
                 message : "Email hasn't been verified yet.check your inbox."
