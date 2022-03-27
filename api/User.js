@@ -84,7 +84,7 @@ router.post('/signup',(req,res) => {
                     email,
                     password : hashedPassword,
                     dateOfBirth,
-                    verified: false
+                    verified: true
                 })
                 console.log(newUser)
 
@@ -130,8 +130,8 @@ const sendVerificationEmail = ({_id,email},res) =>{
      to : email,
      subject : 'Verify Your Email',
      html : `<p>Verify your email to complete the signup and login to your account.</p>
-             <p>This link<b>link expires in 6 hours.</b></p>
-             <p>Press <a href=${currentUrl+"user/verify"+_id+"/"+uniqueString}>here</a>to proceed.</p>` 
+             <p>This link<b>expires in 6 hours.</b></p>
+             <p>Press <a href="http://localhost:3000/signin">here</a> to proceed.</p>` 
  }
  
  //Hashing uniqueString
@@ -282,13 +282,7 @@ router.post('/signin',(req,res) => {
     if(data.length)
     {
          
-        if(!data[0].verified){
-            res.json({
-                status : 'FAILED',
-                message : "Email hasn't been verified yet.check your inbox."
-            })
-        }
-        else{
+        if(data[0].verified){
             const hashedPassword = data[0].password;
             bcrypt.compare(password,hashedPassword).then((result) => {
                 if(result){
@@ -309,6 +303,12 @@ router.post('/signin',(req,res) => {
                     status : 'FAILED',
                     message : 'Error occured while comparing password'
                 })
+            })
+        }
+        else{
+            res.json({
+                status : 'FAILED',
+                message : "Email hasn't been verified yet.check your inbox."
             })
         }    
         }
