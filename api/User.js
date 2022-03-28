@@ -131,7 +131,7 @@ const sendVerificationEmail = ({_id,email},res) =>{
      subject : 'Verify Your Email',
      html : `<p>Verify your email to complete the signup and login to your account.</p>
              <p>This link<b>expires in 6 hours.</b></p>
-             <p>Press <a href="https://golden-toffee-5b0cdd.netlify.app/emailsuccess" >here</a> to proceed.</p>` 
+             <p>Press <a href="https://golden-toffee-5b0cdd.netlify.app/signin" >here</a> to proceed.</p>` 
  }
  
  //Hashing uniqueString
