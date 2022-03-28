@@ -10,6 +10,6 @@ Json format example
 
 # Sign-Up
 {
-    "name" : "Test",
     "email" : "Test123@gmail.com",
+    "password" : "password",
 }
