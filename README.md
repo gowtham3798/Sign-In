@@ -1,6 +1,6 @@
-Json format example
+#Json format example
 
-# Sign-In
+## Sign-In
 {
     "name" : "Test",
     "email" : "Test123@gmail.com",
@@ -8,7 +8,7 @@ Json format example
     "dateOfBirth" : "03-04-1996"
 }
 
-# Sign-Up
+## Sign-Up
 {
     "email" : "Test123@gmail.com",
     "password" : "password",
